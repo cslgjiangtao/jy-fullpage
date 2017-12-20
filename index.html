@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京雨设计</title>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/fullPage.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var screenWidth = window.screen.width;
+            if (screenWidth > 640){
+                $("#full_page").fullpage({
+                    css3: true,
+                    navigation: true,
+                    navigationPosition: 'right',
+                    navigationTooltips: ['壹', '贰', '叁', '肆', '伍'],
+                    onLeave: function(index, nextIndex, direction){
+                        if(index == 1 && direction == 'down'){
+                            $(".header").animate({
+                                top: -90
+                            }, 400);
+                        } else if(index == 2 && direction == 'up') {
+                            $(".header").animate({
+                                top: 0
+                            }, 400);
+                        } else{
+                            $(".header").animate({
+                                top: -90
+                            }, 400);
+                        }
+                    },
+                    afterLoad: function(anchorLink, index){
+                        if (index == 1){
+                            $(".header").animate({
+                                top: 0
+                            }, 400);
+                        }
+                        if (index == 2){
+                            $(".section2_in").addClass("fadeInRight");
+                            $(".section3").find(".section_wrap").removeClass("fadeInRight");
+                            $(".section4_in").removeClass("fadeInLeft");
+                        } else if(index == 3)  {
+                            $(".section3").find(".section_wrap").addClass("fadeInRight");
+                            $(".section2_in").removeClass("fadeInRight");
+                            $(".section4_in").removeClass("fadeInLeft");
+                        } else if(index == 4) {
+                            $(".section4_in").addClass("fadeInLeft");
+                            $(".section2_in").removeClass("fadeInRight");
+                            $(".section3").find(".section_wrap").removeClass("fadeInRight");
+                        } else {
+                            $(".section2_in").removeClass("fadeInRight");
+                            $(".section3").find(".section_wrap").removeClass("fadeInRight");
+                            $(".section4_in").removeClass("fadeInLeft");
+                        }
+                    }
+                });
+            } else {
+                $("#full_page").fullpage({
+                    css3: true,
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="header fixed">
+    <div class="nav clear">
+        <div class="logo fl">
+            <img src="css/images/logo.png">
+        </div>
+        <div class="menu fr">
+            <a class="active" href="javascript:;">首页</a>
+            <a href="join.html">加入我们</a>
+            <a href="contact.html">联系我们</a>
+        </div>
+    </div>
+</div>
+<div id="full_page">
+    <div class="section section1" data-anchor="page1">
+        <div class="section1_in">
+            <img class="image_1_1" src="css/images/phone1.png">
+            <img class="image_1_2" src="css/images/phone2.png">
+            <img class="image_1_3" src="css/images/qr_code1.png">
+            <img class="image_1_4" src="css/images/qr_code2.png">
+            <img class="image_1_5" src="css/images/word.png">
+            <div class="mobile-image">
+                <img class="image_1_6" src="css/images/mobile-word.png">
+                <img class="image_1_7" src="css/images/mobile-code.png">
+            </div>
+        </div>
+    </div>
+    <div class="section section2" data-anchor="page2">
+        <div class="section_wrap">
+            <div class="section2_in fadeInRight">
+                <p class="p_2_1">你能在两个地方找到设计师</p>
+                <p class="p_2_2">彻夜亮光的窗子里</p>
+                <p class="p_2_3">还有，下一页。</p>
+                <p class="p_2_4">找到<img src="css/images/design2.png"></p>
+            </div>
+        </div>
+    </div>
+    <div class="section section3" data-anchor="page3">
+        <div class="section_wrap fadeInRight">
+            <div class="section3_in">
+                <div class="section3_word fadeIn">
+                    <p class="p_3_1">如果你曾有过，苦苦找寻的经历</p>
+                    <p class="p_3_2">那么，不用再蓦然回首</p>
+                    <p class="p_3_3">就在这里</p>
+                    <p class="p_3_4">找到<img src="css/images/design3.png"></p>
+                </div>
+            </div>
+            <div class="section3_bg"></div>
+        </div>
+    </div>
+    <div class="section section4" data-anchor="page4">
+        <div class="section_wrap">
+            <div class="section4_in fadeInLeft">
+                <p class="p_4_1 fadeInRight">如果，你觉得你缺少的，是一个机会</p>
+                <p class="p_4_2 fadeInRight">或者一点运气</p>
+                <p class="p_4_3 fadeInRight">那你一定来对了地方</p>
+                <p class="p_4_4 fadeInRight">找到<img src="css/images/design4.png"></p>
+            </div>
+        </div>
+    </div>
+    <div class="section section5" data-anchor="page5">
+        <div class="section5_in">
+            <div class="section_wrap">
+                <div class="section5_word">
+                    <span class="txt-1">找到设计师</span><br>
+                    <span class="txt-2">手机微信扫二维码下载“设计師”APP</span>
+                    <div class="qr_code">
+                        <div class="qr_left fl">
+                            <img src="css/images/appstore.png">
+                            <img src="css/images/qr_1.png">
+                        </div>
+                        <div class="qr_right fr">
+                            <img src="css/images/android.png">
+                            <img src="css/images/qr_2.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="m-section5_word">
+                    <img class="image_5_1" src="css/images/mobile-b-word.png">
+                    <img class="image_5_2" src="css/images/mobile-qrcode.png">
+                </div>
+            </div>
+        </div>
+        <div class="section5_bottom">
+            <div class="s5_b_in">
+                <div class="pingtai">
+                    <span class="weibo"></span>
+                    <span class="weixin"></span>
+                    <span class="place"></span>
+                </div>
+                 <span>@2016 北京京雨广告有限公司 京ICP备16040307号-1 ，北京市顺义区南法信旭辉空港中心C942</span><br>
+   				 <span>Rainvisual@126.com　010-89457955</span>
+            </div>
+            <div class="m_s5_b_in">
+                 <span>@2016 北京京雨广告有限公司<br>010-89457955<br>京ICP备16040307号-1</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
